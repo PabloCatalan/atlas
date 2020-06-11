@@ -10,5 +10,7 @@ First, you should run *prepare_data.ipynb*. This will generate all data files th
 
 Then, you can safely run *main_figures.ipynb* and *supp_figures.ipynb*.
 
+Also, the notbeook *mic_distributions.ipynb* allows you to plot MIC distributions in ATLAS for every pathogen-antibiotic pair for which there are clinically defined breakpoints.
+
 Hopefully, the notebooks are self-explanatory, but if there is something you don't understand, don't hesitate to contact me at pcatalan [at] math [dot] uc3m [dot] es
 
