@@ -1,0 +1,38 @@
+Amikacin
+Amoxycillin clavulanate
+Ampicillin
+Ampicillin sulbactam
+Azithromycin
+Aztreonam
+Aztreonam avibactam
+Cefepime
+Cefoxitin
+Ceftaroline
+Ceftaroline avibactam
+Ceftazidime
+Ceftazidime avibactam
+Ceftriaxone
+Clarithromycin
+Clindamycin
+Colistin
+ColistinP80
+Daptomycin
+Doripenem
+Ertapenem
+Erythromycin
+Gentamicin
+Imipenem
+Levofloxacin
+Linezolid
+Meropenem
+Metronidazole
+Minocycline
+Moxifloxacin
+Oxacillin
+Penicillin
+Piperacillin tazobactam
+Quinupristin dalfopristin
+Teicoplanin
+Tigecycline
+Trimethoprim sulfa
+Vancomycin

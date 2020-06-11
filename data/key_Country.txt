@@ -1,0 +1,73 @@
+Argentina	13499
+Australia	10199
+Austria	4826
+Belgium	20428
+Brazil	7084
+Bulgaria	2097
+Canada	13257
+Chile	8449
+China	12435
+Colombia	8600
+Croatia	3666
+Czech Republic	10591
+Denmark	7037
+Egypt	315
+El Salvador	348
+Estonia	14
+Finland	2180
+France	44599
+Germany	42234
+Greece	10998
+Guatemala	2219
+Honduras	437
+Hong Kong	1827
+Hungary	10481
+India	2121
+Indonesia	88
+Ireland	5183
+Israel	11873
+Italy	39405
+Jamaica	198
+Japan	4085
+Jordan	1349
+Kenya	572
+Korea, South	8906
+Kuwait	6358
+Latvia	1372
+Lebanon	177
+Lithuania	1159
+Malaysia	2341
+Mauritius	119
+Mexico	16812
+Morocco	1320
+Namibia	139
+Netherlands	6598
+Nicaragua	46
+Nigeria	492
+Norway	195
+Oman	205
+Pakistan	1079
+Panama	2004
+Philippines	7451
+Poland	6698
+Portugal	13656
+Puerto Rico	139
+Romania	4153
+Russia	8534
+Saudi Arabia	1331
+Serbia	199
+Singapore	1783
+Slovak Republic	970
+Slovenia	1378
+South Africa	8755
+Spain	46708
+Sweden	6473
+Switzerland	4609
+Taiwan	8144
+Thailand	6698
+Tunisia	750
+Turkey	7239
+United Kingdom	10258
+United States	127963
+Venezuela	7741
+Vietnam	174
