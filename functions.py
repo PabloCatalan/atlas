@@ -304,8 +304,8 @@ def mic_dist(sp,dr,DF,BPsp):
         smoothmic=mic+np.random.normal(0.0,1.0,len(mic))
         if len(mic)<10: continue
         pY.append(y)
-        pM.append(np.array(mic, dtype=float))
-        sM.append(np.array(smoothmic, dtype=float))
+        pM.append(mic)
+        sM.append(smoothmic)
     return pY, pM, sM
 
 #PLOT CLUSTERMAPS
