@@ -2,7 +2,8 @@
 
 ATLAS is a publicly available antibiotic resistance database, the focus of the following paper:
 
-**Clinical Antibiotic Resistance Patterns Across 70 Countries** (2020) *Pablo Catalán, Carlos Reding, Jessica Blair, Ivana Gudelj, Jon Iredell and Robert Beardmore (to be published).*
+**Seeking patterns of antibiotic resistance in ATLAS, an open, raw
+MIC database with patient metadata* (2022) *Pablo Catalán, Jessica M.A. Blair, Ivana Gudelj, Jonathan R. Iredell and Robert E. Beardmore (accepted in Nature Communications).*
 
 This repository holds the Python code needed to reproduce the analyses in that manuscript, as well as all figures (both in the main text as well as the Supplementary Material). Scripts are included as Python notebook (hopefully to help the reader follow the thread) and a separate *functions.py* file holds all necessary routines.
 
