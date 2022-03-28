@@ -15,6 +15,7 @@ import pandas as pd
 from operator import itemgetter
 from scipy import stats
 import statsmodels.api as sm
+from sklearn import mixture
 
 #CLUSTERING
 def clustermap_clustering(X,Y,SC):
@@ -43,6 +44,7 @@ def extract_rcluster(sp,dr,pY,pM,sM,DF):
     newDFM=pd.DataFrame({'Country': [],'Year': [], 'MIC':[]})
     newDFm=pd.DataFrame({'Country': [],'Year': [], 'MIC':[]})  
     #GAUSSIAN MIXTURE FOR EACH YEAR
+    mM=[]
     for i,(y,smoothmic) in enumerate(zip(pY,sM)):
         mic=pM[i]
         n_components=np.arange(1,6)
@@ -56,6 +58,7 @@ def extract_rcluster(sp,dr,pY,pM,sM,DF):
                 minNC=n-1
                 break
             minAIC=AIC
+        mM.append(minNC)
         gmm=mixture.GaussianMixture(n_components=minNC, max_iter=1000)
         X=np.expand_dims(smoothmic, 1)
         gmm.fit(X)
@@ -89,7 +92,9 @@ def extract_rcluster(sp,dr,pY,pM,sM,DF):
     #SAVE DATAFRAMES           
     newDFM.to_csv('results/Rcluster/'+sp+'_'+dr+'_Rcluster.csv', float_format='%.3f', index=False)
     newDFm.to_csv('results/Rcluster/'+sp+'_'+dr+'_Scluster.csv', float_format='%.3f', index=False)
-
+    DFy=pd.DataFrame({'Year': pY, 'Clusters': mM})
+    DFy.to_csv('results/Rcluster/'+sp+'_'+dr+'_clusters.csv')
+    
 #GAUSSIAN MIXTURE AND EXTRACT R CLUSTER
 def extract_rclusternowrite(sp,dr,pY,pM,sM,DF):
     from sklearn import mixture
@@ -309,7 +314,7 @@ def mic_dist(sp,dr,DF,BPsp):
     return pY, pM, sM
 
 #PLOT CLUSTERMAPS
-def plot_clustermap(X,Y,Z,Ylink1,Ylink2,xp,yp,zp):
+def plot_clustermap(X,Y,Z,Ylink1,Ylink2,xp,yp,zp,vmin=-1,vmax=1):
     import scipy.cluster.hierarchy as sch
     fig = plt.figure(figsize=(8,8))
     # for the letf dendrogram
@@ -342,7 +347,7 @@ def plot_clustermap(X,Y,Z,Ylink1,Ylink2,xp,yp,zp):
     cmap=matplotlib.cm.get_cmap('seismic')
     im = axmatrix.imshow(Z, aspect='auto', cmap=cmap, vmin=-1e6, vmax=1e6)
     size=55
-    P=axmatrix.scatter(yp, xp, c=zp, s=size, cmap=cmap, vmin=-1, vmax=1, edgecolors='k', linewidths=0.5)
+    P=axmatrix.scatter(yp, xp, c=zp, s=size, cmap=cmap, vmin=vmin, vmax=vmax, edgecolors='k', linewidths=0.5)
 
     # xticks to the right (x-axis)
     axmatrix.set_xticks(range(len(Y)))
@@ -361,12 +366,14 @@ def plot_clustermap(X,Y,Z,Ylink1,Ylink2,xp,yp,zp):
     # to add the color bar
     axcolor=fig.add_axes([0.09, 0.71, 0.02, 0.1])
     cbar=fig.colorbar(P,cax=axcolor)
-    cbar.ax.set_yticklabels(['-1.0 or less', '0.0', '1.0 or more'])
+    cbar.ax.set_yticklabels([str(vmin)+' or less', '0.0', str(vmax)+' or more'])
 
     return fig,axmatrix
 
 #PLOT CORRELATION MATRICES
 def plot_corr(R,Y,ax,fig,title):
+    if not R.tolist():
+        return 0
     m,n=R.shape
     I=ax.imshow(R, vmin=0, vmax=1, cmap='RdYlGn', origin='upper',
                 extent=[Y[0]-0.5,Y[-1]+0.5,Y[-1]+0.5,Y[0]-0.5],
@@ -388,6 +395,9 @@ def plot_corr(R,Y,ax,fig,title):
 
 #PLOT MIC DISTRIBUTIONS
 def plot_micdist(Z,pY,fig,ax,title):
+    Z=np.array(Z)
+    if not Z.any():
+        return 0
     cmap=plt.cm.get_cmap('Purples')
     #HEATMAP
     npY=np.array(pY+[2020])
@@ -411,8 +421,10 @@ def plot_micdist(Z,pY,fig,ax,title):
     ax.set_ylim([-10,10])
     return ax
 
-#PLOT MIC HISTOGRAMS
-def plot_michistograms(pY,oH,sH,gM,title):
+#PLOT MIC GRAMS
+def plot_michistograms(pY,oH,sH,gM,title,clusters=[],Ny=[]):
+    if not oH:
+        return 0
     nrows=1
     ncols=len(pY)
     if len(pY)>6:
@@ -429,7 +441,8 @@ def plot_michistograms(pY,oH,sH,gM,title):
         #plot
         ax.bar(B1[:-1], sH[i], width=0.5, alpha=0.5, facecolor='navy')
         ax.bar(B2[:-1], oH[i], width=1.0, alpha=0.5, facecolor='orangered')
-        ax.plot(X, gM[i], color="crimson", lw=2, label=y)
+        if gM:
+            ax.plot(X, gM[i], color="crimson", lw=2, label=y)
         yp=np.linspace(0,1,100)
         ax.plot([0 for z in yp],yp,'--k')
         ax.set_xlabel('MIC')
@@ -441,17 +454,22 @@ def plot_michistograms(pY,oH,sH,gM,title):
         ax.set_ylim([0,1])   
         if i==0:         
             ax.set_title(title)
-        ax.text(0.05,0.9,y,transform=ax.transAxes)
+        Text=str(y)
+        if clusters:
+            Text+=', clusters='+str(clusters[i])+',  N='+str(Ny[i])
+        ax.text(0.05,0.9,Text,transform=ax.transAxes)
     fig.tight_layout()
     return fig
 
 #WATERFALL PLOT
 def plot_waterfall(Z,pY,fig,title):
+    if not Z:
+        return 0
     from matplotlib.collections import PolyCollection, LineCollection
     #READ MIC DATA FROM FILES
     N=1000
     X=np.linspace(-10,10,N)
-    ax = fig.gca(projection='3d')
+    #ax = plt.gca(projection='3d')
     verts = []
     evenly_spaced_interval=np.linspace(0, 1,len(pY))
     colors=[cm.viridis(x) for x in evenly_spaced_interval]
@@ -471,13 +489,43 @@ def plot_waterfall(Z,pY,fig,title):
     ax.set_title(title)
     return ax
 
+#READ CORRELATION MATRICES FROM FILE
+def read_corr(sp,dr,database=''):
+    try:
+        R=[]
+        with open('results'+database+'/correlations/'+sp+'_'+dr+'.txt','r') as f:
+            for line in f:
+                R.append([float(x) for x in line.split()])
+        Y=[]
+        with open('results'+database+'/correlations/'+sp+'_'+dr+'_years.txt','r') as f:
+            for line in f:
+                w=line.split()
+                Y.append(int(w[0]))
+        return [np.array(R),Y]
+    except:
+        print('No correlation file for '+sp+' and ' +dr)
+        return [np.array([]),[]]
+    
 #READ DATASET
-def read_dataset(dir, complete=False):
+def read_dataset(database, complete=False):    
     #DRUGS LIST
-    drugs=read_key('Drugs', dir)
+    drugs=read_key('Drugs', 'data/')
     
     #READ FILE
-    DF=pd.read_excel(dir+'atlas_treated.xlsx', dtype=str)
+    if database=='atlas':
+        DF=pd.read_excel('data/atlas.xlsx', dtype=str, engine='openpyxl')
+    elif database=='atlas2012':
+        DF=pd.read_excel('data/atlas2012.xlsx', dtype=str, engine='openpyxl')
+    elif database=='test':
+        DF=pd.read_excel('data/test.xlsx', dtype=str, engine='openpyxl')
+    elif database=='inform':
+        DF=pd.read_excel('data/inform.xlsx', dtype=str, engine='openpyxl')
+    elif database=='USA':
+        DF=pd.read_excel('data/atlas_usa.xlsx', dtype=str, engine='openpyxl')
+    elif database=='Europe':
+        DF=pd.read_excel('data/atlas_europe.xlsx', dtype=str, engine='openpyxl')
+    elif database=='Rest':
+        DF=pd.read_excel('data/atlas_rest.xlsx', dtype=str, engine='openpyxl')
     for dr in drugs:
         DF[dr]=DF[dr].astype('float64')
     DF['Year']=DF['Year'].astype('int64')
@@ -485,7 +533,7 @@ def read_dataset(dir, complete=False):
     
     if complete==False:#RESTRICTED DATABASE
         #we only want those species with more than 500 entries in ATLAS
-        spC=pd.read_csv(dir+'key_Species.txt', '\t', header=None)    
+        spC=pd.read_csv('data/key_Species.txt', '\t', header=None)    
         spC=spC.sort_values([1],ascending=False)
         pL=[]
         for index, row in spC.iterrows():
@@ -493,7 +541,7 @@ def read_dataset(dir, complete=False):
                 pL.append(row[0])
         DF=DF[DF.Species.isin(pL)]
     else:#COMPLETE DATABASE
-        spC=pd.read_csv(dir+'key_Species.txt', '\t', header=None)    
+        spC=pd.read_csv('data/key_Species.txt', '\t', header=None)    
         spC=spC.sort_values([1],ascending=False)
         pL=spC[0].tolist()
     
@@ -501,48 +549,236 @@ def read_dataset(dir, complete=False):
     bP=get_breakpoints(DF,pL,drugs)
     return DF, pL, bP, drugs
 
-#READ CORRELATION MATRICES FROM FILE
-def read_corr(sp,dr):
-    R=[]
-    with open('results/correlations/'+sp+'_'+dr+'.txt','r') as f:
-        for line in f:
-            R.append([float(x) for x in line.split()])
-    Y=[]
-    with open('results/correlations/'+sp+'_'+dr+'_years.txt','r') as f:
-        for line in f:
-            w=line.split()
-            Y.append(int(w[0]))
-    return [np.array(R),Y]
-
-#READ CORRELATION MATRICES FROM FILE
-def read_hist(sp,dr):
-    oH=[]
-    with open('results/mic_distributions/'+sp+'_'+dr+'_original.txt','r') as f:
-        for line in f:
-            oH.append([float(x) for x in line.split()])
-    sH=[]
-    with open('results/mic_distributions/'+sp+'_'+dr+'_smooth.txt','r') as f:
-        for line in f:
-            sH.append([float(x) for x in line.split()])
-    return [np.array(oH),np.array(sH)]
-
-#READ CORRELATION MATRICES FROM FILE
-def read_micdist(sp,dr):
-    Z=[]
-    with open('results/mic_distributions/'+sp+'_'+dr+'.txt','r') as f:
-        for line in f:
-            Z.append([float(x) for x in line.split()])
-    pY=[]
-    with open('results/mic_distributions/'+sp+'_'+dr+'_years.txt','r') as f:
-        for line in f:
-            w=line.split()
-            pY.append(int(w[0]))
-    return [Z,pY]
+#READ MIC DISTRIBUTION FROM FILE
+def read_hist(sp,dr,database=''):
+    try:
+        oH=[]
+        with open('results'+database+'/mic_distributions/'+sp+'_'+dr+'_original.txt','r') as f:
+            for line in f:
+                oH.append([float(x) for x in line.split()])
+        sH=[]
+        with open('results'+database+'/mic_distributions/'+sp+'_'+dr+'_smooth.txt','r') as f:
+            for line in f:
+                sH.append([float(x) for x in line.split()])
+        return [np.array(oH),np.array(sH)]
+    except:
+        print('No MIC distribution file for '+sp+' and ' +dr)
+        return [[],[]]
+    
+#READ MIC DISTRIBUTION FROM FILE
+def read_hist_Rcluster(sp,dr,database=''):
+    try:
+        oH=[]
+        with open('results'+database+'/mic_distributions/'+sp+'_'+dr+'_Rcluster_original.txt','r') as f:
+            for line in f:
+                oH.append([float(x) for x in line.split()])
+        sH=[]
+        with open('results'+database+'/mic_distributions/'+sp+'_'+dr+'_Rcluster_smooth.txt','r') as f:
+            for line in f:
+                sH.append([float(x) for x in line.split()])
+        return [np.array(oH),np.array(sH)]
+    except:
+        print('No MIC distribution file for '+sp+' and ' +dr)
+        return [[],[]]
 
 #READ KEY FROM FILE
 def read_key(key, folder):
     pL=pd.read_csv(folder+'key_'+key+'.txt','\t',header=None)
     return pL[0].tolist()
+
+#READ MIC DISTRIBUTION FROM FILE
+def read_micdist(sp,dr,database=''):
+    try:
+        Z=[]
+        with open('results'+database+'/mic_distributions/'+sp+'_'+dr+'.txt','r') as f:
+            for line in f:
+                Z.append([float(x) for x in line.split()])
+        pY=[]
+        with open('results'+database+'/mic_distributions/'+sp+'_'+dr+'_years.txt','r') as f:
+            for line in f:
+                w=line.split()
+                pY.append(int(w[0]))
+        return [Z,pY]
+    except:
+        print('No MIC distribution file for '+sp+' and ' +dr)
+        return [[],[]]
+
+#RESISTANT CLUSTER TRENDS
+def resistant_cluster_trends(DF, pL, bP, drugs):
+    lS=[]
+    lA=[]
+    lT=[]
+    lI=[]
+    lEr=[]
+    lRt=[]
+    lRte=[]
+    lSt=[]
+    lSte=[]
+    lRv=[]
+    lRve=[]
+    lRI=[]
+    lSv=[]
+    lSve=[]
+    lSI=[]
+    lB=[]
+    lE=[]
+    lE2=[]
+    N=50
+    for sp,dr in itertools.product(pL,drugs):
+        BP=0
+        BPbool=False
+        if dr in bP[sp]:
+            BP=bP[sp][dr][0]
+            BPbool=True
+        #GLOBAL TREND
+        DFsp=DF[DF.Species==sp]
+        DFc=pd.DataFrame({'Year': DFsp['Year'], 'MIC': DFsp[dr]})
+        DFc=DFc.dropna()
+        yL=get_key(DFc, 'Year')
+        if len(yL)<2: continue
+        x1=DFc['Year'].tolist()
+        y1=DFc['MIC'].tolist()
+        s1,i1,r1,p1,std1=stats.linregress(x1,y1)
+        if p1<0.05:
+            T=s1
+            Er=std1
+            I=i1
+        else:
+            T=0
+            Er=0
+            I=DFc['MIC'].mean()
+        #LOOP FOR R CLUSTER
+        Rtrend=[]
+        Rvalue=[]
+        Ryear=[]
+        R2017=[]
+        Strend=[]
+        Svalue=[]
+        Syear=[]
+        S2017=[]
+        i=-1
+        while i<N:
+            i=i+1
+            #GET R CLUSTER
+            try:#sometimes the Gaussian mixture does not converge, we need to generate a new smooth distribution
+                pY,pM,sM=mic_dist(sp,dr,DF,0)
+                mDFc, lDFc=extract_rclusternowrite(sp, dr, pY, pM, sM, DF)
+            except:
+                i=i-1
+                continue
+            #RCLUSTER TREND
+            yLm=get_key(mDFc, 'Year') 
+            if len(yLm)>=2:
+                x1=mDFc['Year'].tolist()
+                y1=mDFc['MIC'].tolist()
+                s1,i1,r1,p1,std1=stats.linregress(x1,y1)
+                if p1<0.05:
+                    Rtrend.append(s1)#Rs=s1
+                    mDFy=mDFc[mDFc.Year==2017]
+                    if mDFy.empty:
+                        R2017.append(s1*2017+i1)
+                        E=True
+                    else:
+                        R2017.append(mDFy['MIC'].mean())
+                        E=False
+                else:
+                    Rtrend.append(0.0)#Rs=0
+                    R2017.append(mDFc['MIC'].mean())
+                Rvalue.append(np.average(y1))
+                Ryear.append(np.average(x1))
+            #SCLUSTER TREND
+            yLm=get_key(lDFc, 'Year') 
+            if len(yLm)>=2:
+                x1=lDFc['Year'].tolist()
+                y1=lDFc['MIC'].tolist()
+                s1,i1,r1,p1,std1=stats.linregress(x1,y1)
+                if p1<0.05:
+                    Strend.append(s1)#Rs=s1
+                    lDFy=lDFc[lDFc.Year==2017]
+                    if lDFy.empty:
+                        S2017.append(s1*2017+i1)
+                        E2=True
+                    else:
+                        S2017.append(lDFy['MIC'].mean())
+                        E2=False
+                else:
+                    Strend.append(0.0)#Rs=0
+                    S2017.append(lDFc['MIC'].mean())
+                Svalue.append(np.mean(y1))
+                Syear.append(np.mean(x1))
+        #LISTS
+        lS.append(sp)
+        lA.append(dr)
+        lT.append(T)
+        lEr.append(Er)
+        lI.append(I-BP)
+        lRt.append(np.mean(Rtrend))
+        lRte.append(np.std(Rtrend))
+        lRv.append(np.mean(R2017)-BP)
+        lRve.append(np.std(R2017))
+        lRI.append(np.mean(Rvalue)-BP-np.mean(Rtrend)*np.mean(Ryear))
+        lSt.append(np.mean(Strend))
+        lSte.append(np.std(Strend))
+        lSv.append(np.mean(S2017)-BP)
+        lSve.append(np.std(S2017))
+        lSI.append(np.mean(Svalue)-BP-np.mean(Strend)*np.mean(Syear))
+        lB.append(BPbool)
+        lE.append(E)
+        lE2.append(E2)
+    newDF=pd.DataFrame({'Species': lS, 'Antibiotic': lA, 'Trend':lT,
+                    'Trenderror':lEr, 'Intercept': lI,
+                    'Rtrend':lRt, 'Rtrenderror': lRte, 
+                    'R2017': lRv, 'R2017error': lRve,
+                    'RIntercept': lRI,
+                    'Strend': lSt, 'Strenderror': lSte,
+                    'S2017': lSv, 'S2017error': lSve,
+                    'SIntercept': lSI, 'Breakpoint': lB,
+                    'EstimatedR': lE, 'EstimatedS': lE2})
+    return newDF
+
+#RESISTANT CLUSTER VALUES
+def resistant_cluster_values(DF, pL, bP, drugs):
+    Year=ramge(2012,2018)
+    N=50
+    for sp,dr in itertools.product(pL,drugs):
+        BP=0
+        BPbool=False
+        if dr in bP[sp]:
+            BP=bP[sp][dr][0]
+            BPbool=True
+        #LOOP FOR R CLUSTER
+        Rvalue=[[] for _ in Year]
+        Svalue=[[] for _ in Year]
+        i=-1
+        while i<N:
+            i=i+1
+            #GET R CLUSTER
+            try:#sometimes the Gaussian mixture does not converge, we need to generate a new smooth distribution
+                pY,pM,sM=mic_dist(sp,dr,DF,0)
+                mDFc, lDFc=extract_rclusternowrite(sp, dr, pY, pM, sM, DF)
+            except:
+                i=i-1
+                continue
+            #GET VALUE    
+            for y1,y in enumerate(Year):
+                mDFy=mDFc[mDFc.Year==y].mean()
+                lDFy=lDFc[lDFc.Year==y].mean()
+                Rvalue[y1].append(mDFy)
+                Svalue[y1].append(lDFy)
+        #AVERAGES
+        L=[sp,dr]
+        for y1,y in enumerate(Year):
+            L.append(np.mean(Rvalue[y1]))
+        for y1,y in enumerate(Year):
+            L.append(np.mean(Svalue[y1]))
+    #LABELS
+    Col=['Species', 'Antibiotic']
+    for y in Year:
+        Col.append('R'+str(y))
+    for y in Year:
+        Col.append('S'+str(y))
+    newDF=pd.DataFrame.from_records(L, columns=Col)
+    return newDF
 
 #TAU TEST
 def tautest(R):
