@@ -1,0 +1,559 @@
+Species,Antibiotic,S,R
+Staphylococcus aureus,Azithromycin,1.0,3.0
+Staphylococcus aureus,Ceftaroline,0.0,2.0
+Staphylococcus aureus,Clindamycin,-1.0,1.05
+Staphylococcus aureus,Daptomycin,0.0,1.05
+Staphylococcus aureus,Erythromycin,-1.0,2.05
+Staphylococcus aureus,Gentamicin,2.0,4.0
+Staphylococcus aureus,Levofloxacin,0.0,1.05
+Staphylococcus aureus,Linezolid,2.0,3.0
+Staphylococcus aureus,Minocycline,2.0,3.05
+Staphylococcus aureus,Moxifloxacin,-1.0,1.0
+Staphylococcus aureus,Oxacillin,1.0,1.05
+Staphylococcus aureus,Penicillin,-3.0,-2.0
+Staphylococcus aureus,Teicoplanin,3.0,4.05
+Staphylococcus aureus,Tigecycline,-1.0,2.0
+Staphylococcus aureus,Trimethoprim sulfa,1.0,2.0
+Staphylococcus aureus,Vancomycin,1.0,2.0
+Escherichia coli,Amikacin,4.0,5.05
+Escherichia coli,Amoxycillin clavulanate,3.0,4.05
+Escherichia coli,Ampicillin,3.0,4.05
+Escherichia coli,Azithromycin,4.0,8.05
+Escherichia coli,Aztreonam,2.0,4.0
+Escherichia coli,Cefepime,1.0,4.0
+Escherichia coli,Ceftaroline,-1.0,1.0
+Escherichia coli,Ceftazidime,2.0,4.0
+Escherichia coli,Ceftazidime avibactam,3.0,4.0
+Escherichia coli,Ceftriaxone,0.0,2.0
+Escherichia coli,Doripenem,0.0,2.0
+Escherichia coli,Ertapenem,-1.0,0.05
+Escherichia coli,Imipenem,0.0,2.0
+Escherichia coli,Levofloxacin,1.0,2.05
+Escherichia coli,Meropenem,0.0,2.0
+Escherichia coli,Minocycline,2.0,4.0
+Escherichia coli,Piperacillin tazobactam,4.0,7.0
+Escherichia coli,Tigecycline,1.0,3.0
+Klebsiella pneumoniae,Amikacin,4.0,5.05
+Klebsiella pneumoniae,Amoxycillin clavulanate,3.0,4.05
+Klebsiella pneumoniae,Ampicillin,3.0,5.0
+Klebsiella pneumoniae,Aztreonam,2.0,4.0
+Klebsiella pneumoniae,Cefepime,1.0,4.0
+Klebsiella pneumoniae,Ceftaroline,-1.0,1.0
+Klebsiella pneumoniae,Ceftazidime,2.0,4.0
+Klebsiella pneumoniae,Ceftazidime avibactam,3.0,4.0
+Klebsiella pneumoniae,Ceftriaxone,0.0,2.0
+Klebsiella pneumoniae,Doripenem,0.0,2.0
+Klebsiella pneumoniae,Ertapenem,-1.0,0.05
+Klebsiella pneumoniae,Imipenem,0.0,2.0
+Klebsiella pneumoniae,Levofloxacin,1.0,2.05
+Klebsiella pneumoniae,Meropenem,0.0,2.0
+Klebsiella pneumoniae,Minocycline,2.0,4.0
+Klebsiella pneumoniae,Piperacillin tazobactam,4.0,7.0
+Klebsiella pneumoniae,Tigecycline,1.0,3.0
+Pseudomonas aeruginosa,Amikacin,4.0,5.05
+Pseudomonas aeruginosa,Aztreonam,3.0,5.0
+Pseudomonas aeruginosa,Cefepime,3.0,4.05
+Pseudomonas aeruginosa,Ceftazidime,3.0,4.05
+Pseudomonas aeruginosa,Ceftazidime avibactam,3.0,4.0
+Pseudomonas aeruginosa,Colistin,1.0,2.0
+Pseudomonas aeruginosa,Doripenem,1.0,2.05
+Pseudomonas aeruginosa,Imipenem,1.0,3.0
+Pseudomonas aeruginosa,Levofloxacin,1.0,2.05
+Pseudomonas aeruginosa,Meropenem,1.0,3.0
+Pseudomonas aeruginosa,Piperacillin tazobactam,4.0,7.0
+Enterobacter cloacae,Amikacin,4.0,5.05
+Enterobacter cloacae,Amoxycillin clavulanate,3.0,4.05
+Enterobacter cloacae,Ampicillin,3.0,5.0
+Enterobacter cloacae,Azithromycin,-2.0,-2.0
+Enterobacter cloacae,Aztreonam,2.0,4.0
+Enterobacter cloacae,Cefepime,1.0,4.0
+Enterobacter cloacae,Ceftaroline,-1.0,1.0
+Enterobacter cloacae,Ceftazidime,2.0,4.0
+Enterobacter cloacae,Ceftazidime avibactam,3.0,4.0
+Enterobacter cloacae,Ceftriaxone,0.0,2.0
+Enterobacter cloacae,Doripenem,0.0,2.0
+Enterobacter cloacae,Ertapenem,-1.0,0.05
+Enterobacter cloacae,Imipenem,0.0,2.0
+Enterobacter cloacae,Levofloxacin,1.0,2.05
+Enterobacter cloacae,Meropenem,0.0,2.0
+Enterobacter cloacae,Minocycline,2.0,4.0
+Enterobacter cloacae,Piperacillin tazobactam,4.0,7.0
+Enterobacter cloacae,Tigecycline,1.0,3.0
+Streptococcus pneumoniae,Amoxycillin clavulanate,1.0,3.0
+Streptococcus pneumoniae,Azithromycin,-1.0,1.0
+Streptococcus pneumoniae,Ceftaroline,-1.0,4.05
+Streptococcus pneumoniae,Ceftriaxone,0.0,2.0
+Streptococcus pneumoniae,Clarithromycin,-2.0,0.0
+Streptococcus pneumoniae,Clindamycin,-2.0,0.0
+Streptococcus pneumoniae,Doripenem,0.0,2.05
+Streptococcus pneumoniae,Ertapenem,0.0,1.05
+Streptococcus pneumoniae,Erythromycin,-2.0,0.0
+Streptococcus pneumoniae,Imipenem,-3.0,0.0
+Streptococcus pneumoniae,Levofloxacin,1.0,3.0
+Streptococcus pneumoniae,Linezolid,1.0,2.0
+Streptococcus pneumoniae,Meropenem,-2.0,0.0
+Streptococcus pneumoniae,Minocycline,0.0,1.05
+Streptococcus pneumoniae,Moxifloxacin,0.0,2.0
+Streptococcus pneumoniae,Penicillin,-4.0,1.0
+Streptococcus pneumoniae,Tigecycline,-2.95,2.0
+Streptococcus pneumoniae,Vancomycin,0.0,0.05
+Haemophilus influenzae,Amoxycillin clavulanate,2.0,3.0
+Haemophilus influenzae,Ampicillin,0.0,2.0
+Haemophilus influenzae,Ampicillin sulbactam,1.0,2.0
+Haemophilus influenzae,Azithromycin,2.0,8.05
+Haemophilus influenzae,Aztreonam,1.0,6.05
+Haemophilus influenzae,Cefepime,1.0,5.05
+Haemophilus influenzae,Ceftaroline,-1.0,2.0
+Haemophilus influenzae,Ceftazidime,1.0,4.05
+Haemophilus influenzae,Ceftriaxone,1.0,5.0
+Haemophilus influenzae,Doripenem,0.0,1.05
+Haemophilus influenzae,Ertapenem,-1.0,-1.0
+Haemophilus influenzae,Imipenem,2.0,4.05
+Haemophilus influenzae,Levofloxacin,1.0,3.05
+Haemophilus influenzae,Meropenem,-1.0,1.0
+Haemophilus influenzae,Minocycline,1.0,2.05
+Haemophilus influenzae,Piperacillin tazobactam,0.0,1.0
+Haemophilus influenzae,Tigecycline,0.0,2.0
+Acinetobacter baumannii,Amikacin,4.0,5.05
+Acinetobacter baumannii,Cefepime,3.0,4.05
+Acinetobacter baumannii,Ceftazidime,3.0,4.05
+Acinetobacter baumannii,Ceftriaxone,3.0,5.05
+Acinetobacter baumannii,Colistin,1.0,2.0
+Acinetobacter baumannii,Doripenem,1.0,2.05
+Acinetobacter baumannii,Imipenem,1.0,3.0
+Acinetobacter baumannii,Levofloxacin,1.0,2.05
+Acinetobacter baumannii,Meropenem,1.0,3.0
+Acinetobacter baumannii,Minocycline,2.0,4.0
+Acinetobacter baumannii,Piperacillin tazobactam,4.0,7.0
+Enterococcus faecalis,Ampicillin,3.0,4.0
+Enterococcus faecalis,Daptomycin,2.0,3.0
+Enterococcus faecalis,Erythromycin,-1.0,3.0
+Enterococcus faecalis,Levofloxacin,1.0,2.05
+Enterococcus faecalis,Linezolid,1.0,2.05
+Enterococcus faecalis,Minocycline,2.0,3.05
+Enterococcus faecalis,Penicillin,3.0,3.05
+Enterococcus faecalis,Quinupristin dalfopristin,0.0,2.0
+Enterococcus faecalis,Teicoplanin,3.0,5.0
+Enterococcus faecalis,Tigecycline,-2.0,2.0
+Enterococcus faecalis,Vancomycin,2.0,5.0
+Streptococcus agalactiae,Ampicillin,-2.0,4.05
+Streptococcus agalactiae,Azithromycin,-1.0,1.0
+Streptococcus agalactiae,Ceftaroline,-1.0,-1.0
+Streptococcus agalactiae,Ceftriaxone,-1.0,6.05
+Streptococcus agalactiae,Clindamycin,-2.0,0.0
+Streptococcus agalactiae,Daptomycin,0.0,1.0
+Streptococcus agalactiae,Doripenem,-3.0,2.05
+Streptococcus agalactiae,Ertapenem,0.0,1.05
+Streptococcus agalactiae,Erythromycin,-2.0,0.0
+Streptococcus agalactiae,Levofloxacin,1.0,3.0
+Streptococcus agalactiae,Linezolid,1.0,1.0
+Streptococcus agalactiae,Meropenem,-1.0,4.05
+Streptococcus agalactiae,Minocycline,1.0,3.0
+Streptococcus agalactiae,Penicillin,-3.0,3.05
+Streptococcus agalactiae,Tigecycline,-2.0,2.0
+Streptococcus agalactiae,Vancomycin,0.0,0.0
+Serratia marcescens,Amikacin,4.0,5.05
+Serratia marcescens,Amoxycillin clavulanate,3.0,4.05
+Serratia marcescens,Ampicillin,3.0,4.05
+Serratia marcescens,Azithromycin,8.05,8.05
+Serratia marcescens,Aztreonam,2.0,4.0
+Serratia marcescens,Cefepime,1.0,4.0
+Serratia marcescens,Ceftaroline,-1.0,1.0
+Serratia marcescens,Ceftazidime,2.0,4.0
+Serratia marcescens,Ceftazidime avibactam,2.0,4.0
+Serratia marcescens,Ceftriaxone,0.0,2.0
+Serratia marcescens,Doripenem,0.0,2.0
+Serratia marcescens,Ertapenem,-1.0,0.05
+Serratia marcescens,Imipenem,0.0,2.0
+Serratia marcescens,Levofloxacin,1.0,2.05
+Serratia marcescens,Meropenem,0.0,2.0
+Serratia marcescens,Minocycline,2.0,4.0
+Serratia marcescens,Piperacillin tazobactam,4.0,7.0
+Serratia marcescens,Tigecycline,1.0,3.0
+Klebsiella oxytoca,Amikacin,4.0,5.05
+Klebsiella oxytoca,Amoxycillin clavulanate,3.0,4.05
+Klebsiella oxytoca,Ampicillin,3.0,5.0
+Klebsiella oxytoca,Azithromycin,2.0,2.0
+Klebsiella oxytoca,Aztreonam,2.0,4.0
+Klebsiella oxytoca,Cefepime,1.0,4.0
+Klebsiella oxytoca,Ceftaroline,-1.0,1.0
+Klebsiella oxytoca,Ceftazidime,2.0,4.0
+Klebsiella oxytoca,Ceftazidime avibactam,3.0,4.0
+Klebsiella oxytoca,Ceftriaxone,0.0,2.0
+Klebsiella oxytoca,Doripenem,0.0,2.0
+Klebsiella oxytoca,Ertapenem,-1.0,0.05
+Klebsiella oxytoca,Imipenem,0.0,2.0
+Klebsiella oxytoca,Levofloxacin,1.0,2.05
+Klebsiella oxytoca,Meropenem,0.0,2.0
+Klebsiella oxytoca,Minocycline,2.0,4.0
+Klebsiella oxytoca,Piperacillin tazobactam,4.0,7.0
+Klebsiella oxytoca,Tigecycline,1.0,3.0
+Klebsiella aerogenes,Amikacin,4.0,5.05
+Klebsiella aerogenes,Amoxycillin clavulanate,3.0,4.05
+Klebsiella aerogenes,Ampicillin,3.0,5.0
+Klebsiella aerogenes,Azithromycin,1.0,1.0
+Klebsiella aerogenes,Aztreonam,2.0,4.0
+Klebsiella aerogenes,Cefepime,1.0,4.0
+Klebsiella aerogenes,Ceftaroline,-1.0,1.0
+Klebsiella aerogenes,Ceftazidime,2.0,4.0
+Klebsiella aerogenes,Ceftazidime avibactam,3.0,4.0
+Klebsiella aerogenes,Ceftriaxone,0.0,2.0
+Klebsiella aerogenes,Doripenem,0.0,2.0
+Klebsiella aerogenes,Ertapenem,-1.0,0.05
+Klebsiella aerogenes,Imipenem,0.0,2.0
+Klebsiella aerogenes,Levofloxacin,1.0,2.05
+Klebsiella aerogenes,Meropenem,0.0,2.0
+Klebsiella aerogenes,Minocycline,2.0,4.0
+Klebsiella aerogenes,Piperacillin tazobactam,4.0,7.0
+Klebsiella aerogenes,Tigecycline,1.0,3.0
+Enterococcus faecium,Ampicillin,3.0,3.05
+Enterococcus faecium,Daptomycin,2.0,3.05
+Enterococcus faecium,Erythromycin,-1.0,3.0
+Enterococcus faecium,Levofloxacin,1.0,2.05
+Enterococcus faecium,Linezolid,1.0,3.0
+Enterococcus faecium,Minocycline,2.0,3.05
+Enterococcus faecium,Penicillin,3.0,3.05
+Enterococcus faecium,Quinupristin dalfopristin,0.0,2.0
+Enterococcus faecium,Teicoplanin,3.0,5.0
+Enterococcus faecium,Tigecycline,-2.0,2.05
+Enterococcus faecium,Vancomycin,2.0,5.0
+Streptococcus pyogenes,Ampicillin,-2.0,-2.0
+Streptococcus pyogenes,Ceftaroline,-1.0,0.0
+Streptococcus pyogenes,Ceftriaxone,-1.0,1.0
+Streptococcus pyogenes,Clindamycin,-2.0,0.0
+Streptococcus pyogenes,Daptomycin,0.0,2.05
+Streptococcus pyogenes,Doripenem,-3.0,2.05
+Streptococcus pyogenes,Ertapenem,0.0,1.0
+Streptococcus pyogenes,Erythromycin,-2.0,0.0
+Streptococcus pyogenes,Levofloxacin,1.0,3.0
+Streptococcus pyogenes,Linezolid,1.0,2.05
+Streptococcus pyogenes,Meropenem,-1.0,0.05
+Streptococcus pyogenes,Minocycline,1.0,3.0
+Streptococcus pyogenes,Penicillin,-3.0,3.0
+Streptococcus pyogenes,Tigecycline,-2.0,2.0
+Streptococcus pyogenes,Vancomycin,0.0,0.0
+Staphylococcus epidermidis,Clindamycin,-1.0,1.05
+Staphylococcus epidermidis,Daptomycin,0.0,1.05
+Staphylococcus epidermidis,Erythromycin,-1.0,2.05
+Staphylococcus epidermidis,Gentamicin,2.0,4.0
+Staphylococcus epidermidis,Levofloxacin,0.0,1.05
+Staphylococcus epidermidis,Linezolid,2.0,3.0
+Staphylococcus epidermidis,Minocycline,2.0,3.05
+Staphylococcus epidermidis,Moxifloxacin,-1.0,1.0
+Staphylococcus epidermidis,Oxacillin,-2.0,-1.0
+Staphylococcus epidermidis,Penicillin,-3.0,-2.0
+Staphylococcus epidermidis,Teicoplanin,3.0,4.05
+Staphylococcus epidermidis,Tigecycline,-1.0,1.0
+Staphylococcus epidermidis,Trimethoprim sulfa,1.0,2.0
+Staphylococcus epidermidis,Vancomycin,2.0,3.0
+Citrobacter freundii,Amikacin,4.0,5.05
+Citrobacter freundii,Amoxycillin clavulanate,3.0,4.05
+Citrobacter freundii,Ampicillin,3.0,5.0
+Citrobacter freundii,Aztreonam,2.0,4.0
+Citrobacter freundii,Cefepime,1.0,4.0
+Citrobacter freundii,Ceftaroline,-1.0,1.0
+Citrobacter freundii,Ceftazidime,2.0,4.0
+Citrobacter freundii,Ceftazidime avibactam,3.0,5.0
+Citrobacter freundii,Ceftriaxone,0.0,2.0
+Citrobacter freundii,Doripenem,0.0,2.0
+Citrobacter freundii,Ertapenem,-1.0,0.05
+Citrobacter freundii,Imipenem,0.0,2.0
+Citrobacter freundii,Levofloxacin,1.0,2.05
+Citrobacter freundii,Meropenem,0.0,2.0
+Citrobacter freundii,Minocycline,2.0,4.0
+Citrobacter freundii,Piperacillin tazobactam,4.0,7.0
+Citrobacter freundii,Tigecycline,1.0,3.0
+Proteus mirabilis,Amikacin,4.0,5.05
+Proteus mirabilis,Amoxycillin clavulanate,3.0,4.05
+Proteus mirabilis,Ampicillin,3.0,5.0
+Proteus mirabilis,Aztreonam,2.0,4.0
+Proteus mirabilis,Cefepime,1.0,4.0
+Proteus mirabilis,Ceftaroline,-1.0,1.0
+Proteus mirabilis,Ceftazidime,2.0,4.0
+Proteus mirabilis,Ceftazidime avibactam,3.0,4.0
+Proteus mirabilis,Ceftriaxone,0.0,2.0
+Proteus mirabilis,Doripenem,0.0,2.0
+Proteus mirabilis,Ertapenem,-1.0,0.05
+Proteus mirabilis,Imipenem,0.0,2.0
+Proteus mirabilis,Levofloxacin,1.0,2.05
+Proteus mirabilis,Meropenem,0.0,2.0
+Proteus mirabilis,Piperacillin tazobactam,4.0,7.0
+Proteus mirabilis,Tigecycline,1.0,3.0
+Citrobacter koseri,Amikacin,4.0,5.05
+Citrobacter koseri,Amoxycillin clavulanate,3.0,4.05
+Citrobacter koseri,Ampicillin,3.0,5.0
+Citrobacter koseri,Aztreonam,2.0,4.0
+Citrobacter koseri,Cefepime,1.0,4.0
+Citrobacter koseri,Ceftaroline,-1.0,1.0
+Citrobacter koseri,Ceftazidime,2.0,4.0
+Citrobacter koseri,Ceftazidime avibactam,2.0,7.05
+Citrobacter koseri,Ceftriaxone,0.0,2.0
+Citrobacter koseri,Doripenem,0.0,2.0
+Citrobacter koseri,Ertapenem,-2.0,0.05
+Citrobacter koseri,Imipenem,0.0,2.0
+Citrobacter koseri,Levofloxacin,1.0,2.05
+Citrobacter koseri,Meropenem,0.0,2.0
+Citrobacter koseri,Minocycline,2.0,4.0
+Citrobacter koseri,Piperacillin tazobactam,4.0,7.0
+Citrobacter koseri,Tigecycline,1.0,3.0
+Staphylococcus haemolyticus,Clindamycin,-1.0,1.05
+Staphylococcus haemolyticus,Daptomycin,0.0,1.0
+Staphylococcus haemolyticus,Erythromycin,-1.0,2.05
+Staphylococcus haemolyticus,Gentamicin,2.0,4.0
+Staphylococcus haemolyticus,Levofloxacin,0.0,1.05
+Staphylococcus haemolyticus,Linezolid,2.0,3.05
+Staphylococcus haemolyticus,Minocycline,2.0,3.05
+Staphylococcus haemolyticus,Moxifloxacin,-1.0,1.0
+Staphylococcus haemolyticus,Oxacillin,-2.0,-1.0
+Staphylococcus haemolyticus,Penicillin,-3.0,-2.0
+Staphylococcus haemolyticus,Teicoplanin,3.0,4.05
+Staphylococcus haemolyticus,Tigecycline,-1.0,1.05
+Staphylococcus haemolyticus,Trimethoprim sulfa,1.0,2.0
+Staphylococcus haemolyticus,Vancomycin,2.0,2.0
+Bacteroides fragilis,Cefoxitin,4.0,5.05
+Bacteroides fragilis,Clindamycin,1.0,3.0
+Bacteroides fragilis,Meropenem,2.0,3.05
+Bacteroides fragilis,Metronidazole,3.0,4.05
+Bacteroides fragilis,Piperacillin tazobactam,4.0,6.05
+Bacteroides fragilis,Tigecycline,2.0,4.0
+Stenotrophomonas maltophilia,Ceftazidime,3.0,4.05
+Stenotrophomonas maltophilia,Levofloxacin,1.0,2.05
+Stenotrophomonas maltophilia,Minocycline,2.0,4.0
+Morganella morganii,Amikacin,4.0,5.05
+Morganella morganii,Amoxycillin clavulanate,3.0,4.05
+Morganella morganii,Ampicillin,3.0,5.0
+Morganella morganii,Aztreonam,2.0,4.0
+Morganella morganii,Cefepime,1.0,4.0
+Morganella morganii,Ceftaroline,-1.0,1.0
+Morganella morganii,Ceftazidime,2.0,4.0
+Morganella morganii,Ceftazidime avibactam,3.0,4.0
+Morganella morganii,Ceftriaxone,0.0,2.0
+Morganella morganii,Doripenem,0.0,2.05
+Morganella morganii,Ertapenem,-1.0,0.05
+Morganella morganii,Imipenem,0.0,2.0
+Morganella morganii,Levofloxacin,1.0,2.05
+Morganella morganii,Meropenem,0.0,3.05
+Morganella morganii,Piperacillin tazobactam,4.0,7.0
+Morganella morganii,Tigecycline,1.0,3.0
+Acinetobacter pitii,Amikacin,4.0,5.05
+Acinetobacter pitii,Cefepime,3.0,4.05
+Acinetobacter pitii,Ceftazidime,3.0,4.05
+Acinetobacter pitii,Ceftriaxone,3.0,5.05
+Acinetobacter pitii,Colistin,1.0,2.0
+Acinetobacter pitii,Doripenem,1.0,2.05
+Acinetobacter pitii,Imipenem,1.0,3.0
+Acinetobacter pitii,Levofloxacin,1.0,2.05
+Acinetobacter pitii,Meropenem,1.0,3.0
+Acinetobacter pitii,Minocycline,2.0,4.0
+Acinetobacter pitii,Piperacillin tazobactam,4.0,7.0
+Proteus vulgaris,Amikacin,4.0,5.05
+Proteus vulgaris,Amoxycillin clavulanate,3.0,4.05
+Proteus vulgaris,Ampicillin,3.0,5.0
+Proteus vulgaris,Aztreonam,2.0,4.0
+Proteus vulgaris,Cefepime,1.0,4.05
+Proteus vulgaris,Ceftaroline,-1.0,1.0
+Proteus vulgaris,Ceftazidime,2.0,4.0
+Proteus vulgaris,Ceftazidime avibactam,1.0,4.0
+Proteus vulgaris,Ceftriaxone,0.0,2.0
+Proteus vulgaris,Doripenem,0.0,2.0
+Proteus vulgaris,Ertapenem,-1.0,0.05
+Proteus vulgaris,Imipenem,0.0,2.0
+Proteus vulgaris,Levofloxacin,1.0,2.05
+Proteus vulgaris,Meropenem,0.0,2.0
+Proteus vulgaris,Piperacillin tazobactam,4.0,7.05
+Proteus vulgaris,Tigecycline,1.0,3.0
+Enterobacter asburiae,Amikacin,4.0,5.05
+Enterobacter asburiae,Amoxycillin clavulanate,3.0,4.05
+Enterobacter asburiae,Ampicillin,3.0,5.0
+Enterobacter asburiae,Aztreonam,2.0,4.0
+Enterobacter asburiae,Cefepime,1.0,4.0
+Enterobacter asburiae,Ceftaroline,-1.0,1.0
+Enterobacter asburiae,Ceftazidime,2.0,4.0
+Enterobacter asburiae,Ceftazidime avibactam,1.0,7.05
+Enterobacter asburiae,Ceftriaxone,0.0,2.0
+Enterobacter asburiae,Doripenem,0.0,2.0
+Enterobacter asburiae,Ertapenem,-1.0,0.05
+Enterobacter asburiae,Imipenem,0.0,2.0
+Enterobacter asburiae,Levofloxacin,1.0,2.05
+Enterobacter asburiae,Meropenem,0.0,2.0
+Enterobacter asburiae,Minocycline,2.0,4.0
+Enterobacter asburiae,Piperacillin tazobactam,4.0,7.0
+Enterobacter asburiae,Tigecycline,1.0,2.0
+Acinetobacter lwoffii,Amikacin,4.0,6.0
+Acinetobacter lwoffii,Cefepime,3.0,5.0
+Acinetobacter lwoffii,Ceftazidime,3.0,4.05
+Acinetobacter lwoffii,Ceftriaxone,3.0,5.05
+Acinetobacter lwoffii,Colistin,0.0,0.0
+Acinetobacter lwoffii,Doripenem,-1.0,-1.0
+Acinetobacter lwoffii,Imipenem,1.0,3.0
+Acinetobacter lwoffii,Levofloxacin,1.0,3.0
+Acinetobacter lwoffii,Meropenem,1.0,3.0
+Acinetobacter lwoffii,Minocycline,2.0,4.0
+Acinetobacter lwoffii,Piperacillin tazobactam,4.0,7.0
+Streptococcus dysgalactiae,Ceftriaxone,-1.0,-1.0
+Streptococcus dysgalactiae,Clindamycin,-2.0,0.0
+Streptococcus dysgalactiae,Daptomycin,0.0,0.0
+Streptococcus dysgalactiae,Doripenem,-2.0,1.0
+Streptococcus dysgalactiae,Ertapenem,-1.0,-1.0
+Streptococcus dysgalactiae,Erythromycin,-2.0,0.0
+Streptococcus dysgalactiae,Levofloxacin,1.0,3.0
+Streptococcus dysgalactiae,Linezolid,1.0,2.0
+Streptococcus dysgalactiae,Meropenem,-2.0,-2.0
+Streptococcus dysgalactiae,Minocycline,1.0,1.05
+Streptococcus dysgalactiae,Penicillin,-3.0,1.0
+Streptococcus dysgalactiae,Tigecycline,-2.0,-1.0
+Streptococcus dysgalactiae,Vancomycin,0.0,0.0
+Clostridioides (Clostridium) difficile,Clindamycin,1.0,3.0
+Clostridioides (Clostridium) difficile,Meropenem,2.0,3.05
+Clostridioides (Clostridium) difficile,Metronidazole,2.0,4.05
+Clostridioides (Clostridium) difficile,Penicillin,-1.0,1.0
+Clostridioides (Clostridium) difficile,Piperacillin tazobactam,4.0,6.05
+Clostridioides (Clostridium) difficile,Tigecycline,2.0,2.0
+Clostridium perfringens,Clindamycin,1.0,3.0
+Clostridium perfringens,Meropenem,2.0,3.0
+Clostridium perfringens,Metronidazole,3.0,4.0
+Clostridium perfringens,Penicillin,-1.0,1.0
+Clostridium perfringens,Piperacillin tazobactam,4.0,6.0
+Clostridium perfringens,Tigecycline,2.0,4.0
+Staphylococcus hominis,Clindamycin,-1.0,1.05
+Staphylococcus hominis,Daptomycin,0.0,0.0
+Staphylococcus hominis,Erythromycin,-1.0,2.05
+Staphylococcus hominis,Gentamicin,2.0,4.0
+Staphylococcus hominis,Levofloxacin,0.0,1.05
+Staphylococcus hominis,Linezolid,2.0,3.0
+Staphylococcus hominis,Minocycline,2.0,3.05
+Staphylococcus hominis,Moxifloxacin,-1.0,1.0
+Staphylococcus hominis,Oxacillin,-2.0,-1.0
+Staphylococcus hominis,Teicoplanin,3.0,4.0
+Staphylococcus hominis,Tigecycline,-1.0,0.0
+Staphylococcus hominis,Trimethoprim sulfa,1.0,2.0
+Staphylococcus hominis,Vancomycin,2.0,2.0
+Klebsiella variicola,Amikacin,4.0,5.05
+Klebsiella variicola,Amoxycillin clavulanate,3.0,5.0
+Klebsiella variicola,Ampicillin,3.0,5.0
+Klebsiella variicola,Aztreonam,2.0,4.0
+Klebsiella variicola,Cefepime,1.0,4.0
+Klebsiella variicola,Ceftaroline,-1.0,1.0
+Klebsiella variicola,Ceftazidime,2.0,4.0
+Klebsiella variicola,Ceftazidime avibactam,0.0,7.05
+Klebsiella variicola,Ceftriaxone,-1.0,2.0
+Klebsiella variicola,Doripenem,-1.0,3.05
+Klebsiella variicola,Ertapenem,-6.0,-6.0
+Klebsiella variicola,Imipenem,0.0,2.0
+Klebsiella variicola,Levofloxacin,1.0,3.0
+Klebsiella variicola,Meropenem,0.0,2.0
+Klebsiella variicola,Minocycline,2.0,4.0
+Klebsiella variicola,Piperacillin tazobactam,4.0,7.0
+Klebsiella variicola,Tigecycline,1.0,3.05
+Streptococcus anginosus,Ceftriaxone,-1.0,2.05
+Streptococcus anginosus,Clindamycin,-2.0,0.0
+Streptococcus anginosus,Daptomycin,0.0,2.05
+Streptococcus anginosus,Doripenem,-2.0,2.05
+Streptococcus anginosus,Ertapenem,0.0,1.05
+Streptococcus anginosus,Erythromycin,-2.0,0.0
+Streptococcus anginosus,Levofloxacin,1.0,3.0
+Streptococcus anginosus,Linezolid,1.0,2.0
+Streptococcus anginosus,Meropenem,-2.0,0.05
+Streptococcus anginosus,Minocycline,1.0,1.05
+Streptococcus anginosus,Penicillin,-3.0,1.0
+Streptococcus anginosus,Tigecycline,-3.0,-3.0
+Streptococcus anginosus,Vancomycin,0.0,0.05
+Enterobacter kobei,Amikacin,4.0,6.05
+Enterobacter kobei,Amoxycillin clavulanate,3.0,4.05
+Enterobacter kobei,Ampicillin,3.0,5.0
+Enterobacter kobei,Azithromycin,-1.0,-1.0
+Enterobacter kobei,Aztreonam,2.0,4.0
+Enterobacter kobei,Cefepime,1.0,4.0
+Enterobacter kobei,Ceftaroline,-1.0,1.0
+Enterobacter kobei,Ceftazidime,2.0,4.0
+Enterobacter kobei,Ceftazidime avibactam,2.0,2.0
+Enterobacter kobei,Ceftriaxone,0.0,2.0
+Enterobacter kobei,Doripenem,0.0,2.0
+Enterobacter kobei,Ertapenem,-1.0,0.05
+Enterobacter kobei,Imipenem,0.0,2.0
+Enterobacter kobei,Levofloxacin,1.0,2.05
+Enterobacter kobei,Meropenem,0.0,2.0
+Enterobacter kobei,Minocycline,2.0,4.0
+Enterobacter kobei,Piperacillin tazobactam,4.0,7.0
+Enterobacter kobei,Tigecycline,1.0,3.0
+Parvimonas micra,Clindamycin,1.0,3.0
+Parvimonas micra,Meropenem,2.0,3.05
+Parvimonas micra,Metronidazole,3.0,4.05
+Parvimonas micra,Penicillin,-1.0,1.0
+Parvimonas micra,Piperacillin tazobactam,4.0,4.0
+Parvimonas micra,Tigecycline,0.0,0.0
+Prevotella bivia,Cefoxitin,4.0,5.05
+Prevotella bivia,Clindamycin,1.0,3.0
+Prevotella bivia,Meropenem,1.0,3.05
+Prevotella bivia,Metronidazole,3.0,4.05
+Prevotella bivia,Piperacillin tazobactam,4.0,6.0
+Prevotella bivia,Tigecycline,2.0,3.0
+Providencia stuartii,Amikacin,4.0,5.05
+Providencia stuartii,Amoxycillin clavulanate,3.0,4.05
+Providencia stuartii,Ampicillin,3.0,5.0
+Providencia stuartii,Aztreonam,2.0,4.0
+Providencia stuartii,Cefepime,1.0,4.0
+Providencia stuartii,Ceftaroline,-1.0,1.0
+Providencia stuartii,Ceftazidime,2.0,4.0
+Providencia stuartii,Ceftazidime avibactam,3.0,4.0
+Providencia stuartii,Ceftriaxone,0.0,2.0
+Providencia stuartii,Doripenem,0.0,2.0
+Providencia stuartii,Ertapenem,-1.0,-1.0
+Providencia stuartii,Imipenem,0.0,2.0
+Providencia stuartii,Levofloxacin,1.0,2.05
+Providencia stuartii,Meropenem,0.0,2.0
+Providencia stuartii,Piperacillin tazobactam,4.0,7.0
+Providencia stuartii,Tigecycline,1.0,3.0
+Staphylococcus lugdunensis,Clindamycin,-2.0,1.05
+Staphylococcus lugdunensis,Daptomycin,0.0,1.0
+Staphylococcus lugdunensis,Erythromycin,-1.0,2.05
+Staphylococcus lugdunensis,Gentamicin,2.0,4.0
+Staphylococcus lugdunensis,Levofloxacin,0.0,1.05
+Staphylococcus lugdunensis,Linezolid,1.0,1.0
+Staphylococcus lugdunensis,Minocycline,1.0,3.0
+Staphylococcus lugdunensis,Moxifloxacin,-1.0,1.0
+Staphylococcus lugdunensis,Oxacillin,1.0,1.05
+Staphylococcus lugdunensis,Teicoplanin,3.0,3.0
+Staphylococcus lugdunensis,Tigecycline,-1.0,-1.0
+Staphylococcus lugdunensis,Trimethoprim sulfa,1.0,2.05
+Staphylococcus lugdunensis,Vancomycin,1.0,1.0
+Bacteroides thetaiotaomicron,Cefoxitin,4.0,5.05
+Bacteroides thetaiotaomicron,Clindamycin,1.0,3.0
+Bacteroides thetaiotaomicron,Meropenem,2.0,3.05
+Bacteroides thetaiotaomicron,Metronidazole,2.0,4.05
+Bacteroides thetaiotaomicron,Piperacillin tazobactam,4.0,6.05
+Bacteroides thetaiotaomicron,Tigecycline,2.0,4.0
+Peptostreptococcus magnus,Clindamycin,1.0,3.0
+Peptostreptococcus magnus,Meropenem,1.0,3.05
+Peptostreptococcus magnus,Metronidazole,1.0,1.0
+Peptostreptococcus magnus,Penicillin,-1.0,1.0
+Peptostreptococcus magnus,Piperacillin tazobactam,4.0,4.0
+Peptostreptococcus magnus,Tigecycline,1.0,1.0
+Serratia liquefaciens,Amikacin,4.0,6.0
+Serratia liquefaciens,Amoxycillin clavulanate,3.0,4.05
+Serratia liquefaciens,Ampicillin,3.0,5.0
+Serratia liquefaciens,Aztreonam,-3.0,7.05
+Serratia liquefaciens,Cefepime,1.0,4.0
+Serratia liquefaciens,Ceftaroline,-1.0,7.0
+Serratia liquefaciens,Ceftazidime,2.0,4.0
+Serratia liquefaciens,Ceftazidime avibactam,-1.0,-1.0
+Serratia liquefaciens,Ceftriaxone,0.0,2.0
+Serratia liquefaciens,Doripenem,-1.0,-1.0
+Serratia liquefaciens,Ertapenem,-5.0,-5.0
+Serratia liquefaciens,Imipenem,0.0,2.0
+Serratia liquefaciens,Levofloxacin,1.0,3.0
+Serratia liquefaciens,Meropenem,0.0,2.0
+Serratia liquefaciens,Minocycline,2.0,4.0
+Serratia liquefaciens,Piperacillin tazobactam,4.0,7.0
+Serratia liquefaciens,Tigecycline,1.0,3.0
+Acinetobacter nosocomialis,Amikacin,4.0,5.05
+Acinetobacter nosocomialis,Cefepime,3.0,4.05
+Acinetobacter nosocomialis,Ceftazidime,3.0,4.05
+Acinetobacter nosocomialis,Ceftriaxone,3.0,5.05
+Acinetobacter nosocomialis,Colistin,1.0,2.0
+Acinetobacter nosocomialis,Doripenem,1.0,2.05
+Acinetobacter nosocomialis,Imipenem,1.0,3.05
+Acinetobacter nosocomialis,Levofloxacin,1.0,2.05
+Acinetobacter nosocomialis,Meropenem,1.0,3.0
+Acinetobacter nosocomialis,Minocycline,2.0,4.0
+Acinetobacter nosocomialis,Piperacillin tazobactam,4.0,7.0
