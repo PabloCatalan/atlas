@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/267821124.svg)](https://zenodo.org/badge/latestdoi/267821124)
+
 # ATLAS database manipulation
 
 ATLAS is a publicly available antibiotic resistance database, the focus of the following paper:
